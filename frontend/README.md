@@ -59,3 +59,10 @@ Abra o *browser* e acesse a url http://localhost:4200. Pronto!
 
 A aplicação está disponível na [AWS](http://formacao-cloud-curso-java.s3-website-us-east-1.amazonaws.com/)
 
+## Build para deploy da Aplicação na AWS
+
+```
+ng build --configuration production
+```
+Copiar os arquivos do diretório **./dist** para dentro de um Bucket S3 da AWS
+
