@@ -8,7 +8,6 @@
 - JPA
 - MYSQL
 - Actuator
-- 
 
 ### Pré-requisitos
 Você vai precisar de uma IDE como por exemplo: IntelliJ IDEA, Eclipse, VSCode.
