@@ -11,8 +11,8 @@
         </div>
         <br />
         <div class="form-group">
-          <label for="preco">Preço</label>
-          <input type="number" class="form-control" id="preco" formControlName="preco">
+          <label for="valor">Preço</label>
+          <input type="number" class="form-control" id="valor" formControlName="valor">
         </div>
         <br />
         <div class="form-group">
@@ -41,7 +41,7 @@
         </thead>
         <tr *ngFor="let produto of produtos">
           <td>{{produto.nome}}</td>
-          <td>{{produto.preco}}</td>
+          <td>{{produto.valor}}</td>
           <td>{{produto.descricao}}</td>
           <td style="width:100px">
             <div>

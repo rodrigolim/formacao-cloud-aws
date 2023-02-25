@@ -15,7 +15,7 @@ export class AppComponent {
     id: [],
     nome: [null, Validators.required],
     descricao: [null],
-    preco: [null, Validators.required]
+    valor: [null, Validators.required]
   })
 
   constructor(
@@ -44,7 +44,7 @@ export class AppComponent {
       id: this.produtoForm.get('id')?.value,
       nome: this.produtoForm.get('nome')?.value,
       descricao: this.produtoForm.get('descricao')?.value,
-      preco: this.produtoForm.get('preco')?.value
+      valor: this.produtoForm.get('valor')?.value
     }
   }
 
