@@ -16,6 +16,13 @@ Você vai precisar de uma IDE como por exemplo: IntelliJ IDEA, Eclipse, VSCode.
 - Instale o Apache Maven 3.5.3+
 
 
+## Utilizando MySql em DOCKER
+
+Se possuir DOCKER, instale o MySQL com o comando abaixo.
+```
+docker run --name mysql -p 3306:3306 -p 33060:33060 -e MYSQL_ROOT_HOST='%' -e MYSQL_ROOT_PASSWORD='admin' -d mysql:latest
+```
+
 ## Deploy da Aplicação
 
 A aplicação está disponível na [AWS](http://apiproduto-env.eba-2wzud2pe.sa-east-1.elasticbeanstalk.com/)
