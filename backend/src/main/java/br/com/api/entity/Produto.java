@@ -1,7 +1,6 @@
-package br.com.apiproduto.entity;
+package br.com.api.entity;
 
 import lombok.Data;
-import org.apache.el.lang.ELArithmetic;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

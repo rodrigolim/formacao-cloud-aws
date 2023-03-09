@@ -1,8 +1,8 @@
-package br.com.apiproduto.service.impl;
+package br.com.api.service.impl;
 
-import br.com.apiproduto.entity.Produto;
-import br.com.apiproduto.repository.ProdutoRepository;
-import br.com.apiproduto.service.ProdutoService;
+import br.com.api.entity.Produto;
+import br.com.api.repository.ProdutoRepository;
+import br.com.api.service.ProdutoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

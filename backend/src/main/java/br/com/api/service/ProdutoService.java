@@ -1,6 +1,6 @@
-package br.com.apiproduto.service;
+package br.com.api.service;
 
-import br.com.apiproduto.entity.Produto;
+import br.com.api.entity.Produto;
 
 import java.util.List;
 

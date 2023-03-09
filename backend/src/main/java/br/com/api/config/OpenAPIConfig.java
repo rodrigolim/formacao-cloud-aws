@@ -1,4 +1,4 @@
-package br.com.apiproduto.config;
+package br.com.api.config;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;

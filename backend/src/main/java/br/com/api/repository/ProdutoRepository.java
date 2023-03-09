@@ -1,6 +1,6 @@
-package br.com.apiproduto.repository;
+package br.com.api.repository;
 
-import br.com.apiproduto.entity.Produto;
+import br.com.api.entity.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
