@@ -19,7 +19,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     public List<Usuario> buscarTodos() {
-        return repository.findAll();
+        return (List<Usuario>) repository.findAll();
     }
 
     @Override
