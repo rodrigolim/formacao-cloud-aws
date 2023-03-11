@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthenticationServiceImpl implements UserDetailsService {
 
+    @Autowired
     private UsuarioRepository usuarioRepository;
 
     @Override

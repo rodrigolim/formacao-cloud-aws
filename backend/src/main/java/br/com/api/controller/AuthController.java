@@ -10,6 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping
 public class AuthController {
 
     @Autowired
@@ -17,14 +18,14 @@ public class AuthController {
     @Autowired
     private TokenService tokenService;
 
-    @PostMapping("/login")
+    @PostMapping("/api/login")
     public String login(@RequestBody Login login) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                 new UsernamePasswordAuthenticationToken(login.login(), login.password());
 
         Authentication authenticate = this.authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
-        var usuario = (Usuario) authenticate.getPrincipal();
+        Usuario usuario = (Usuario) authenticate.getPrincipal();
 
         return tokenService.gerarToken(usuario);
     }

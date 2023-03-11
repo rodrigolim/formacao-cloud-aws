@@ -23,6 +23,5 @@ public class TokenServiceImpl implements TokenService {
                         .plusMinutes(10)
                         .toInstant(ZoneOffset.of("-03:00")))
                 ).sign(Algorithm.HMAC256("secreta"));
-
     }
 }
