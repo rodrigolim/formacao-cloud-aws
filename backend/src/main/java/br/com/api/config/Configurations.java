@@ -1,5 +1,6 @@
 package br.com.api.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -12,6 +13,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
 @Configuration
@@ -33,9 +35,12 @@ public class Configurations {
             "/webjars/**",
             // -- Swagger UI v3 (OpenAPI)
             "/v3/api-docs/**",
-            "/swagger-ui/**"
+            "/swagger-ui/**",
             // other public endpoints of your API may be appended to this array
     };
+
+    @Autowired
+    private FilterToken filter;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -44,10 +49,13 @@ public class Configurations {
                .and()
                //.authorizeHttpRequests()
                .authorizeRequests()
-               .antMatchers(AUTH_WHITELIST).permitAll()
-               .antMatchers(HttpMethod.POST, "/api/login").permitAll()
+               .antMatchers(HttpMethod.POST, "/login").permitAll()
                .antMatchers(HttpMethod.GET, "/").permitAll()
-               .anyRequest().authenticated().and().build();
+               .antMatchers(AUTH_WHITELIST).permitAll()
+               .anyRequest().authenticated()
+               .and()
+               .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
+               .build();
     }
 
     @Bean
@@ -56,7 +64,7 @@ public class Configurations {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder getPasswordEncoder(){
         return new BCryptPasswordEncoder();
     }
 

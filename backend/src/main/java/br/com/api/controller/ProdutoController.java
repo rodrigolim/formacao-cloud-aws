@@ -2,6 +2,7 @@ package br.com.api.controller;
 
 import br.com.api.entity.Produto;
 import br.com.api.service.ProdutoService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@SecurityRequirement(name="javainuseapi")
 @RequestMapping("/api/produto")
 public class ProdutoController {
 

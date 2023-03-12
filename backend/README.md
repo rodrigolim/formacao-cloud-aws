@@ -4,15 +4,17 @@
 ### Tecnologia utilizadas:
 - JAVA
 - SPRING BOOT
+- SPRING SECURITY API
 - OPEN API
 - JPA
+- LOMBOK
 - MYSQL
-- Actuator
+- ACTUATOR
 
 ### Pré-requisitos
 Você vai precisar de uma IDE como por exemplo: IntelliJ IDEA, Eclipse, VSCode.
 - Instale MYSQL 5+
-- Instale a JDK 11+
+- Instale a JDK 14+
 - Instale o Apache Maven 3.5.3+
 
 
