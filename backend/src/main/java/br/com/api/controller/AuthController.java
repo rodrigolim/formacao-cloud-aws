@@ -2,6 +2,7 @@ package br.com.api.controller;
 
 import br.com.api.dto.Login;
 import br.com.api.entity.Usuario;
+import br.com.api.payload.JwtResponse;
 import br.com.api.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class AuthController {
     private TokenService tokenService;
 
     @PostMapping
-    public String login(@RequestBody Login login) {
+    public ResponseEntity<?> login(@RequestBody Login login) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                 new UsernamePasswordAuthenticationToken(login.login(), login.password());
 
@@ -28,7 +29,14 @@ public class AuthController {
 
         Usuario usuario = (Usuario) authenticate.getPrincipal();
 
-        return tokenService.gerarToken(usuario);
+        String jwtToken = tokenService.gerarToken(usuario);
+
+        return ResponseEntity.ok(new JwtResponse(jwtToken,
+                                                 usuario.getId(),
+                                                 usuario.getLogin()
+                                                ));
+
+
     }
 
 }
